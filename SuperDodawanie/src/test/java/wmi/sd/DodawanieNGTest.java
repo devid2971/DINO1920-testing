@@ -47,5 +47,29 @@ public class DodawanieNGTest {
             assertEquals(result, expResult);
         }
     }
+            @Test
+    public void testBinaryOutput() {
+        System.out.println("dodawanie");
+        Random  r = new Random();
+        for(int i = 0;i<10;i++){
+            int aa = r.nextInt(100)+100;
+            int bb = r.nextInt(100)+100;
+            String a = Integer.toString(aa);
+            String b = Integer.toString(bb);
+            
+            String expResult = Integer.toBinaryString(aa + bb);
+            String result = Dodawanie.dodawanie(a, b);
+            assertEquals(result, expResult);
+        }
+    }
+            @Test
+    public void testIntDoString() {
+        System.out.println("dodawanie");
+        int aa = 5;
+        String a = Integer.toString(aa);
+        String b = "hjkhsdkfhkjdh";
+        String result = Dodawanie.dodawanie(a, b);
+        assertEquals(result, "Niedozwolona operacja");        
 
+    }
 }
