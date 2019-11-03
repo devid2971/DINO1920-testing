@@ -17,6 +17,24 @@ public class Dodawanie {
         if(aa<=100 && bb<=100){
             return Integer.toString(aa+bb);
         }
+        if(aa>100 && aa<=200){
+            if(bb>100 && bb<=200){
+               return Integer.toBinaryString(aa+bb); 
+            }
+            if(!isInteger(b)){
+                return "Niedozwolona operacja";  
+            }      
+        }
         return "etam co mnie to";
     }
 }
+
+
+    private static boolean isInteger(String s){
+        try { 
+            Integer.parseInt(s); 
+        } catch(NumberFormatException e){ 
+            return false; 
+        }
+        return true;
+    }
