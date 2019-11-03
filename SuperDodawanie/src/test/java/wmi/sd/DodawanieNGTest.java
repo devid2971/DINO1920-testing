@@ -65,7 +65,8 @@ public class DodawanieNGTest {
             @Test
     public void testIntDoString() {
         System.out.println("dodawanie");
-        int aa = 5;
+        Random  r = new Random();
+        int aa = r.nextInt(99)+101;
         String a = Integer.toString(aa);
         String b = "hjkhsdkfhkjdh";
         String result = Dodawanie.dodawanie(a, b);
