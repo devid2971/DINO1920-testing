@@ -52,8 +52,8 @@ public class DodawanieNGTest {
         System.out.println("dodawanie");
         Random  r = new Random();
         for(int i = 0;i<10;i++){
-            int aa = r.nextInt(100)+100;
-            int bb = r.nextInt(100)+100;
+            int aa = r.nextInt(99)+101;
+            int bb = r.nextInt(99)+101;
             String a = Integer.toString(aa);
             String b = Integer.toString(bb);
             
