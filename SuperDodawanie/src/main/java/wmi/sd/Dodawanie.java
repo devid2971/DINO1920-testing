@@ -11,25 +11,28 @@ package wmi.sd;
  */
 public class Dodawanie {
     public static String dodawanie(String a, String b){
-        int aa = Integer.valueOf(a);
-        int bb = Integer.valueOf(b);
-        
-        if(aa<=100 && bb<=100){
-            return Integer.toString(aa+bb);
-        }
-        if(aa>100 && aa<=200){
-            if(bb>100 && bb<=200){
-               return Integer.toBinaryString(aa+bb); 
+        if(!isInteger(a)) {
+            return dodawanieFloatDoInt(a, b);
+        } else {
+            int aa = Integer.valueOf(a);
+            int bb = Integer.valueOf(b);
+
+            if(aa<=100 && bb<=100){
+                return Integer.toString(aa+bb);
             }
-            if(!isInteger(b)){
-                return "Niedozwolona operacja";  
-            }      
+            if(aa>100 && aa<=200){
+               if(!isInteger(b)){
+                  return "Niedozwolona operacja";  
+               }               
+               if(bb>100 && bb<=200){
+                  return Integer.toBinaryString(aa+bb); 
+               }     
+            }
+          
+            return "etam co mnie to";
         }
-        return "etam co mnie to";
     }
-}
-
-
+    
     private static boolean isInteger(String s){
         try { 
             Integer.parseInt(s); 
@@ -38,3 +41,11 @@ public class Dodawanie {
         }
         return true;
     }
+            
+    private static String dodawanieFloatDoInt(String a, String b){
+        float aa = Float.valueOf(a);
+        int bb = Integer.valueOf(b);
+        System.out.println(aa+bb);
+        return Float.toString(aa+bb);
+    }
+}
