@@ -20,13 +20,8 @@ public class Dodawanie {
             if(aa<=100 && bb<=100){
                 return Integer.toString(aa+bb);
             }
-            if(aa>100 && aa<=200){
-               if(!isInteger(b)){
-                  return "Niedozwolona operacja";  
-               }               
-               if(bb>100 && bb<=200){
-                  return Integer.toBinaryString(aa+bb); 
-               }     
+            if(aa>100 && aa<=200 && bb>100 && bb<=200){              
+                return Integer.toBinaryString(aa+bb);     
             }
           
             return "etam co mnie to";
